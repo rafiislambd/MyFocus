@@ -99,7 +99,7 @@ describe_type_anime = 'Art/Anime'
 describe_types = [describe_type_photo, describe_type_anime]
 
 sdxl_aspect_ratios = [
-    '704*1408', '704*1344', '768*1344', '768*1280', '832*1216', '832*1152',
+    '832*1152','704*1408', '704*1344', '768*1344', '768*1280', '832*1216',
     '896*1152', '896*1088', '960*1088', '960*1024', '1024*1024', '1024*960',
     '1088*960', '1088*896', '1152*896', '1152*832', '1216*832', '1280*768',
     '1344*768', '1344*704', '1408*704', '1472*704', '1536*640', '1600*640',
@@ -138,7 +138,7 @@ class PerformanceLoRA(Enum):
 
 class Steps(IntEnum):
     QUALITY = 60
-    SPEED = 30
+    SPEED = 10
     EXTREME_SPEED = 8
     LIGHTNING = 4
     HYPER_SD = 4
@@ -150,7 +150,7 @@ class Steps(IntEnum):
 
 class StepsUOV(IntEnum):
     QUALITY = 36
-    SPEED = 18
+    SPEED = 10
     EXTREME_SPEED = 8
     LIGHTNING = 4
     HYPER_SD = 4
