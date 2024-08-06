@@ -74,7 +74,7 @@ def try_load_deprecated_user_path_config():
         replace_config('fooocus_expansion_path', 'path_fooocus_expansion')
         replace_config('temp_outputs_path', 'path_outputs')
 
-        if deprecated_config_dict.get("default_model", None) == 'juggernautXL_version6Rundiffusion.safetensors':
+        if deprecated_config_dict.get("default_model", None) == 'newmodel_00001_.safetensors':
             os.replace('user_path_config.txt', 'user_path_config-deprecated.txt')
             print('Config updated successfully in silence. '
                   'A backup of previous config is written to "user_path_config-deprecated.txt".')
@@ -345,7 +345,7 @@ default_max_lora_number = get_config_item_or_set_default(
 )
 default_cfg_scale = get_config_item_or_set_default(
     key='default_cfg_scale',
-    default_value=7.0,
+    default_value=1.5,
     validator=lambda x: isinstance(x, numbers.Number),
     expected_type=numbers.Number
 )
@@ -376,16 +376,14 @@ default_vae = get_config_item_or_set_default(
 default_styles = get_config_item_or_set_default(
     key='default_styles',
     default_value=[
-        "Fooocus V2",
-        "Fooocus Enhance",
-        "Fooocus Sharp"
+        "Fooocus V2"
     ],
     validator=lambda x: isinstance(x, list) and all(y in modules.sdxl_styles.legal_style_names for y in x),
     expected_type=list
 )
 default_prompt_negative = get_config_item_or_set_default(
     key='default_prompt_negative',
-    default_value='',
+    default_value='plastic, deformed, blurry, bad anatomy, bad eyes, crossed eyes, disfigured, poorly drawn face, mutation, mutated, extra limb, ugly, poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, blender, doll, cropped, low-res, close-up, poorly-drawn face, out of frame double, two heads, blurred, ugly, disfigured, too many fingers, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy,text, watermark,ugly, deformed, noisy, blurry, distorted, out of focus, bad anatomy, extra limbs, poorly drawn face, poorly drawn hands, missing fingers, nudity, nude, ugly, deformed, noisy, blurry, distorted, grainy, nudity, nude,ugly, deformed, noisy, blurry, distorted, out of focus, bad anatomy, extra limbs, poorly drawn face, poorly drawn hands, missing fingers, 6 fingers, bad hands, bad fingers,too many digits',
     validator=lambda x: isinstance(x, str),
     disable_empty_as_none=True,
     expected_type=str
@@ -435,7 +433,7 @@ default_image_prompt_advanced_checkbox = get_config_item_or_set_default(
 )
 default_max_image_number = get_config_item_or_set_default(
     key='default_max_image_number',
-    default_value=32,
+    default_value=5,
     validator=lambda x: isinstance(x, int) and x >= 1,
     expected_type=int
 )
@@ -447,7 +445,7 @@ default_output_format = get_config_item_or_set_default(
 )
 default_image_number = get_config_item_or_set_default(
     key='default_image_number',
-    default_value=2,
+    default_value=1,
     validator=lambda x: isinstance(x, int) and 1 <= x <= default_max_image_number,
     expected_type=int
 )
