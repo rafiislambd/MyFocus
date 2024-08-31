@@ -4,6 +4,11 @@
         "prompt": "UHD, 8K, ultra detailed, a cinematic photograph of {prompt}, beautiful lighting, great composition",
         "negative_prompt": "ugly, deformed, noisy, blurry, NSFW"
     },
+     {
+        "name": "None",
+        "prompt": "",
+        "negative_prompt": ""
+    },
     {
         "name": "Abstract Expressionism",
         "prompt": "Abstract Expressionism Art, {prompt}, High contrast, minimalistic, colorful, stark, dramatic, expressionism",
